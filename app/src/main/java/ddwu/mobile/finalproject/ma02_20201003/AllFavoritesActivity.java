@@ -13,9 +13,9 @@ public class AllFavoritesActivity extends Activity {
 	
 	private ListView lvContacts = null;
 
-	private ArrayAdapter<CulturalSpaceInfoDTO> adapter;
+	private ArrayAdapter<FavoriteCulturalSpaceInfoDTO> adapter;
 	private FavoritesDBHelper helper;
-	private ArrayList<CulturalSpaceInfoDTO> contactList;
+	private ArrayList<FavoriteCulturalSpaceInfoDTO> contactList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +23,10 @@ public class AllFavoritesActivity extends Activity {
 		setContentView(R.layout.activity_all_contacts);
 
 		helper = new FavoritesDBHelper(this);
-		contactList = new ArrayList<CulturalSpaceInfoDTO>();
+		contactList = new ArrayList<FavoriteCulturalSpaceInfoDTO>();
 
 		lvContacts = (ListView)findViewById(R.id.lvContacts);
-		adapter = new ArrayAdapter<CulturalSpaceInfoDTO>(this, android.R.layout.simple_list_item_1, contactList);
+		adapter = new ArrayAdapter<FavoriteCulturalSpaceInfoDTO>(this, android.R.layout.simple_list_item_1, contactList);
 
 		lvContacts.setAdapter(adapter);
 	}
@@ -44,10 +44,10 @@ public class AllFavoritesActivity extends Activity {
 
 		while (cursor.moveToNext())
 		{
-			CulturalSpaceInfoDTO dto = new CulturalSpaceInfoDTO();
+			FavoriteCulturalSpaceInfoDTO dto = new FavoriteCulturalSpaceInfoDTO();
 			dto.setId(cursor.getInt(cursor.getColumnIndex("_id")));
 			dto.setFac_Name(cursor.getString(cursor.getColumnIndex(FavoritesDBHelper.COL_NAME)));
-			dto.setAddr(cursor.getString(cursor.getColumnIndex(FavoritesDBHelper.COL_ADD)));
+			dto.setDesc(cursor.getString(cursor.getColumnIndex(FavoritesDBHelper.COL_ADD)));
 			contactList.add(dto);
 		}
 		adapter.notifyDataSetChanged();

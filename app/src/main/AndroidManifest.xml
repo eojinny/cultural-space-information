@@ -32,6 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="ddwu.mobile.finalproject.ma02_20201003.NaverBlogSearchActivity" />
+        <activity android:name="ddwu.mobile.finalproject.ma02_20201003.AllFavoritesActivity" />
     </application>
 
 </manifest>

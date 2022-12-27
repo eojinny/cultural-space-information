@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
@@ -89,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
         });
         apiAddress = "http://openapi.seoul.go.kr:8088/6d55526c4f6a696e3839435071654c/xml/culturalSpaceInfo/1/820";
 
-        lvList = (ListView) findViewById(R.id.lvList);
+        //lvList = (ListView) findViewById(R.id.lvList);
 
         resultList = new ArrayList<CulturalSpaceInfoDTO>();
         adapter = new ArrayAdapter<CulturalSpaceInfoDTO>(this, android.R.layout.simple_list_item_1, resultList);
 
-        lvList.setAdapter(adapter);
+        //lvList.setAdapter(adapter);
 
         flpClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -119,7 +120,22 @@ public class MainActivity extends AppCompatActivity {
 //        apiAddress = getResources().getString(R.string.server_url);
 
 
-
+        Button Button_Search = findViewById(R.id.Button_Search);
+        Button_Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NaverBlogSearchActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button Button_favorite = findViewById(R.id.Button_favorite);
+        Button_favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),AllFavoritesActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

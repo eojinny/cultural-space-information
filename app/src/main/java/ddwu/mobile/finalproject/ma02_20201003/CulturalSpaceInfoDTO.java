@@ -16,6 +16,12 @@ public class CulturalSpaceInfoDTO {
     public CulturalSpaceInfoDTO() {
     }
 
+    public CulturalSpaceInfoDTO(int id, String fac_Name, String addr) {
+        this.id = id;
+        Fac_Name = fac_Name;
+        Addr = addr;
+    }
+
     public CulturalSpaceInfoDTO(int num, String subjectCode, String fac_Name, String addr, Double x_Coord, Double y_Coord, String phne, String homapage, String fac_Desc) {
         this.num = num;
         SubjectCode = subjectCode;
