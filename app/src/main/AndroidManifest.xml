@@ -35,6 +35,7 @@
 
         <activity android:name="ddwu.mobile.finalproject.ma02_20201003.NaverBlogSearchActivity" />
         <activity android:name="ddwu.mobile.finalproject.ma02_20201003.AllFavoritesActivity" />
+        <activity android:name="ddwu.mobile.finalproject.ma02_20201003.NearPlaceActivity" />
     </application>
 
 </manifest>

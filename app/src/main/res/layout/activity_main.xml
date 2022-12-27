@@ -9,9 +9,9 @@
 
     <Button
         android:id="@+id/Button_Search"
-        android:layout_width="156dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
         android:background="#00ff0000"
         android:text="검색"
         android:textColor="#000000"
@@ -22,14 +22,27 @@
 
     <Button
         android:id="@+id/Button_favorite"
-        android:layout_width="156dp"
+        android:layout_width="122dp"
         android:layout_height="52dp"
         android:layout_marginTop="52dp"
         android:background="#00ff0000"
         android:text="즐겨찾기"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Button_near"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="112dp"
+        android:background="#00ff0000"
+        android:text="주변 위치"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private Marker centerMarker;
 
     private Button btn_open_bt_sheet;
-
+    LatLng currentLoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,13 +81,17 @@ public class MainActivity extends AppCompatActivity {
         btn_open_bt_sheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CulturalSpaceInfoGpsBottomSheetFragment bottomSheetDialog = new CulturalSpaceInfoGpsBottomSheetFragment();
+                bottomSheetDialog.show(getSupportFragmentManager(), "BottomSheet");
 
-                CulturalSpaceInfoGpsBottomSheetDialog bottomSheetDialog = new CulturalSpaceInfoGpsBottomSheetDialog();
-                bottomSheetDialog.show(getSupportFragmentManager(), "exampleBottomSheet");
+                Bundle bundle = new Bundle();
+                bundle.putString("key", String.valueOf(mLastLocation));
+                bottomSheetDialog.setArguments(bundle);
                 //txt_result.setText("바텀시트 보여짐");
 
             }
         });
+        Log.d(TAG,"마지막 위/ 경"+ mLastLocation);
         apiAddress = "http://openapi.seoul.go.kr:8088/6d55526c4f6a696e3839435071654c/xml/culturalSpaceInfo/1/820";
 
         //lvList = (ListView) findViewById(R.id.lvList);
@@ -133,6 +137,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),AllFavoritesActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button Button_near = findViewById(R.id.Button_near);
+        Button_near.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),NearPlaceActivity.class);
+                intent.putExtra("Location", mLastLocation);
                 startActivity(intent);
             }
         });
