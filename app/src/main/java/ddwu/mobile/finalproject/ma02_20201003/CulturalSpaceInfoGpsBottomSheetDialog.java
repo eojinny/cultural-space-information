@@ -25,13 +25,13 @@ public class CulturalSpaceInfoGpsBottomSheetDialog extends BottomSheetDialogFrag
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
 
-        mListener = (BottomSheetListener) getContext();
+       // mListener = (BottomSheetListener) getContext();
 
         btn_hide_bt_sheet = view.findViewById(R.id.btn_hide_bt_sheet);
         btn_hide_bt_sheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onButtonClicked("바텀 시트 숨겨짐");
+                //mListener.onButtonClicked("바텀 시트 숨겨짐");
                 dismiss();
             }
         });

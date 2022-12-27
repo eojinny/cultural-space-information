@@ -44,7 +44,7 @@ public class FavoriteCulturalSpaceInfoDTO {
 
     @Override
     public String toString() {
-        return "FavoriteCulturalSpaceInfoDTO{" +
+        return
                 "id=" + id +
                 ", Fac_Name='" + Fac_Name + '\'' +
                 ", Desc='" + Desc + '\'' +
